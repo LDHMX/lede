@@ -8,6 +8,8 @@
 name: OpenWrt-CI
 
 on:
+  repository_dispatch:
+  workflow_dispatch:
   schedule:
     - cron: 0 20 * * *
 
@@ -20,7 +22,7 @@ jobs:
 
     name: Build OpenWrt Firmware
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Space cleanup and Initialization environment
